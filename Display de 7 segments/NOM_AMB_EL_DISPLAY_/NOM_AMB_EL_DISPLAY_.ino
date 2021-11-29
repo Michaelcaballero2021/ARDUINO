@@ -28,54 +28,32 @@ void setup()
 
 void loop()
 {
-   //0
-  digitalWrite(segA, HIGH);    // posar a 5V el pin 5
-  digitalWrite(segB, HIGH);    // posar a 5V el pin 6
-  digitalWrite(segC, HIGH);    // posar a 5V el pin 7
-  digitalWrite(segD, HIGH);    // posar a 5V el pin 8
-  digitalWrite(segE, HIGH);    // posar a 5V el pin 9
-  digitalWrite(segF, LOW);    // posar a 5V el pin 10
-  digitalWrite(segG, HIGH);    // posar a 5V el pin 11
-
-  delay(1500);                  // es quedA 1500ms ences
-
-    //1
-  digitalWrite(segA, HIGH);    // posar a 5V el pin 5
+  //M
+  digitalWrite(segA, LOW);    // posar a 5V el pin 5
   digitalWrite(segB, LOW);    // posar a 5V el pin 6
   digitalWrite(segC, HIGH);    // posar a 5V el pin 7
   digitalWrite(segD, LOW);    // posar a 5V el pin 8
-  digitalWrite(segE, LOW);    // posar a 5V el pin 9
-  digitalWrite(segF, LOW);    // posar a 5V el pin 10
-  digitalWrite(segG, LOW);    // posar a 5V el pin 11
-
-  delay(1500);                  // es quedA 1500ms ences
-
-    //2
-  digitalWrite(segA, LOW);    // posar a 5V el pin 5
-  digitalWrite(segB, HIGH);    // posar a 5V el pin 6
-  digitalWrite(segC, HIGH);    // posar a 5V el pin 7
-  digitalWrite(segD, HIGH);    // posar a 5V el pin 8
   digitalWrite(segE, HIGH);    // posar a 5V el pin 9
-  digitalWrite(segF, HIGH);    // posar a 5V el pin 10
-  digitalWrite(segG, LOW);    // posar a 5V el pin 11
+  digitalWrite(segF, LOW);    // posar a 5V el pin 10
+  digitalWrite(segG, HIGH);    // posar a 5V el pin 11
 
   delay(1500);                  // es quedA 1500ms ences
-
-    //3
-  digitalWrite(segA, LOW);    // posar a 5V el pin 5
-  digitalWrite(segB, HIGH);    // posar a 5V el pin 6
-  digitalWrite(segC, LOW);    // posar a 5V el pin 7
+ 
+  //A
+  digitalWrite(segA, HIGH);    // posar a 5V el pin 5
+  digitalWrite(segB, LOW);    // posar a 5V el pin 6
+  digitalWrite(segC, HIGH);    // posar a 5V el pin 7
   digitalWrite(segD, HIGH);    // posar a 5V el pin 8
   digitalWrite(segE, HIGH);    // posar a 5V el pin 9
   digitalWrite(segF, HIGH);    // posar a 5V el pin 10
   digitalWrite(segG, HIGH);    // posar a 5V el pin 11
 
   delay(1500);                  // es quedA 1500ms ences
-
-    //4
+ 
+  //K
   digitalWrite(segA, HIGH);    // posar a 5V el pin 5
   digitalWrite(segB, LOW);    // posar a 5V el pin 6
-  digitalWrite(segC, LOW);    // posar a 5V el pin 7
+  digitalWrite(segC, HIGH);    // posar a 5V el pin 7
   digitalWrite(segD, HIGH);    // posar a 5V el pin 8
   digitalWrite(segE, LOW);    // posar a 5V el pin 9
   digitalWrite(segF, HIGH);    // posar a 5V el pin 10
@@ -83,59 +61,16 @@ void loop()
 
   delay(1500);                  // es quedA 1500ms ences
 
-    //5
-  digitalWrite(segA, HIGH);    // posar a 5V el pin 5
-  digitalWrite(segB, HIGH);    // posar a 5V el pin 6
-  digitalWrite(segC, LOW);    // posar a 5V el pin 7
-  digitalWrite(segD, LOW);    // posar a 5V el pin 8
-  digitalWrite(segE, HIGH);    // posar a 5V el pin 9
-  digitalWrite(segF, HIGH);    // posar a 5V el pin 10
-  digitalWrite(segG, HIGH);    // posar a 5V el pin 11
-
-  delay(1500);                  // es quedA 1500ms ences
-
-    //6
+  //E
   digitalWrite(segA, HIGH);    // posar a 5V el pin 5
   digitalWrite(segB, HIGH);    // posar a 5V el pin 6
   digitalWrite(segC, HIGH);    // posar a 5V el pin 7
   digitalWrite(segD, LOW);    // posar a 5V el pin 8
   digitalWrite(segE, HIGH);    // posar a 5V el pin 9
   digitalWrite(segF, HIGH);    // posar a 5V el pin 10
-  digitalWrite(segG, HIGH);    // posar a 5V el pin 11
+  digitalWrite(segG, LOW);    // posar a 5V el pin 11
 
   delay(1500);                  // es quedA 1500ms ences
 
-    //7
-  digitalWrite(segA, LOW);    // posar a 5V el pin 5
-  digitalWrite(segB, LOW);    // posar a 5V el pin 6
-  digitalWrite(segC, LOW);    // posar a 5V el pin 7
-  digitalWrite(segD, HIGH);    // posar a 5V el pin 8
-  digitalWrite(segE, HIGH);    // posar a 5V el pin 9
-  digitalWrite(segF, LOW);    // posar a 5V el pin 10
-  digitalWrite(segG, HIGH);    // posar a 5V el pin 11
-
-  delay(1500);                  // es quedA 1500ms ences
-
-    //8
-  digitalWrite(segA, HIGH);    // posar a 5V el pin 5
-  digitalWrite(segB, HIGH);    // posar a 5V el pin 6
-  digitalWrite(segC, HIGH);    // posar a 5V el pin 7
-  digitalWrite(segD, HIGH);    // posar a 5V el pin 8
-  digitalWrite(segE, HIGH);    // posar a 5V el pin 9
-  digitalWrite(segF, HIGH);    // posar a 5V el pin 10
-  digitalWrite(segG, HIGH);    // posar a 5V el pin 11
-
-  delay(1500);                  // es quedA 1500ms ences
-
-    //9
-  digitalWrite(segA, HIGH);    // posar a 5V el pin 5
-  digitalWrite(segB, LOW);    // posar a 5V el pin 6
-  digitalWrite(segC, LOW);    // posar a 5V el pin 7
-  digitalWrite(segD, HIGH);    // posar a 5V el pin 8
-  digitalWrite(segE, HIGH);    // posar a 5V el pin 9
-  digitalWrite(segF, HIGH);    // posar a 5V el pin 10
-  digitalWrite(segG, HIGH);    // posar a 5V el pin 11
-
-  delay(1500);                  // es quedA 1500ms ences
 
 }
