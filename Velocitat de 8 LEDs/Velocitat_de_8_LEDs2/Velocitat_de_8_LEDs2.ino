@@ -1,179 +1,67 @@
-//**********************************************************************************
-//**                                                                               **
-//**                             Velocitat de 8 LEDs                               **
-//**                                                                               **
-//***********************************************************************************
-//********** Includes *************************************************************
-//********** Variables ************************************************************
-const byte led0 = 5;          // donar nom al pin 5 de l’Arduino
-const byte led1 = 6;          // donar nom al pin 6 de l’Arduino
-const byte led2 = 7;          // donar nom al pin 7 de l’Arduino
-const byte led3 = 8;          // donar nom al pin 8 de l’Arduino
-const byte led4 = 9;          // donar nom al pin 9 de l’Arduino
-const byte led5 = 10;         // donar nom al pin 10 de l’Arduino
-const byte led6 = 11;         // donar nom al pin 11 de l’Arduino
-const byte led7 = 12;         // donar nom al pin 12 de l’Arduino
-const byte pot0 = A0;         // donar nom al pin A0 de l’Arduino
+ /******************************************************************************
+**                                                                           **
+**                              Music player                                 **
+**                                                                           **
+**           c=DO, d=RE, e=MI, f=FA, g=SOL, a=LA, b=SI, C=DO' D=RE'          **
+**                                                                           **
+*******************************************************************************/
+//******* Includes ************************************************************
 
-unsigned long velocitat = 20;          // velocitat de l'acció en ms
-int valPot0;                 // guardar valor del potenciometre
+//******* Variables ***********************************************************
+const byte speakerPin = 9;   // pin for speaker
+int tempo = 150;
 
-//********** Setup ****************************************************************
-void setup()
-{
-  pinMode(led0, OUTPUT);     // definir el pin 5 com una sortida
-  pinMode(led1, OUTPUT);     // definir el pin 6 com una sortida
-  pinMode(led2, OUTPUT);     // definir el pin 7 com una sortida
-  pinMode(led3, OUTPUT);     // definir el pin 8 com una sortida
-  pinMode(led4, OUTPUT);     // definir el pin 9 com una sortida
-  pinMode(led5, OUTPUT);     // definir el pin 10 com una sortida
-  pinMode(led6, OUTPUT);     // definir el pin 11 com una sortida
-  pinMode(led7, OUTPUT);     // definir el pin 12 com una sortida
-  Serial.begin(9600);
+//Melody 1
+int length = 15; // the number of notes
+char notes[] = "ccggaagffeeddc "; // a space represents a rest
+int beats[] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 4 }; // time notes
+
+//Melody 2 himne del Barça
+//int length = 21; 
+//char notes[] = "egC egC egCDCb abCabg";
+//int beats[]={3, 2, 2, 1, 3, 2, 2, 1, 2, 1, 2, 2, 1, 3, 1, 2, 1, 1, 1, 1, 3, 1};
+
+//Melody 3
+//int length = 51;
+//char notes[] = "eeeeeeegcdefffffeeeeeddedgeeeeeeegcdefffffeeeeggfdc";
+//int beats[] = { 2, 2, 4, 2, 2, 4, 2, 2, 3, 1, 8, 2, 2, 3, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 4, 4, 2, 2, 4, 2, 2, 4, 2, 2, 3, 1, 8, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 4};
+
+//****** Setup ****************************************************************
+void setup() {
+  // make the pin output
+  pinMode(speakerPin, OUTPUT);
 }
 
-//********** Loop *****************************************************************
-void loop()
-{
-  valPot0 = analogRead(pot0);   // llegir valor del potenciòmetre
-  Serial.println(valPot0);
-  velocitat = 10 + valPot0;     // actualitzar velocitat amb el valor del potenciòmetre
-                  // anira de 10 a 1034ms  
-
-  digitalWrite(led0, HIGH);    // posar a 5V el pin 5
-  digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, LOW);    // posar a 5V el pin 7
-  digitalWrite(led3, LOW);    // posar a 5V el pin 8
-  digitalWrite(led4, LOW);    // posar a 5V el pin 9
-  digitalWrite(led5, LOW);    // posar a 5V el pin 10
-  digitalWrite(led6, LOW);    // posar a 5V el pin 11
-  digitalWrite(led7, HIGH);    // posar a 5V el pin 12
-  
-  delay(velocitat);            // es queden leds velocitat ms en aquest estat
-  
-  digitalWrite(led0, HIGH);     // posar a 0V el pin 5
-  digitalWrite(led1, HIGH);     // posar a 0V el pin 6
-  digitalWrite(led2, LOW);     // posar a 0V el pin 7
-  digitalWrite(led3, LOW);     // posar a 0V el pin 8
-  digitalWrite(led4, LOW);     // posar a 0V el pin 9
-  digitalWrite(led5, LOW);     // posar a 0V el pin 10
-  digitalWrite(led6, HIGH);     // posar a 0V el pin 11
-  digitalWrite(led7, HIGH);     // posar a 0V el pin 12
-  
-delay(velocitat);            // es queden leds velocitat ms en aquest estat
-
-   digitalWrite(led0, LOW);    // posar a 5V el pin 5
-  digitalWrite(led1, HIGH);    // posar a 5V el pin 6
-  digitalWrite(led2, HIGH);    // posar a 5V el pin 7
-  digitalWrite(led3, LOW);    // posar a 5V el pin 8
-  digitalWrite(led4, LOW);    // posar a 5V el pin 9
-  digitalWrite(led5, HIGH);    // posar a 5V el pin 10
-  digitalWrite(led6, HIGH);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
-  
-  delay(velocitat);            // es queden leds velocitat ms en aquest estat
-  
-   digitalWrite(led0, LOW);    // posar a 5V el pin 5
-  digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, HIGH);    // posar a 5V el pin 7
-  digitalWrite(led3, HIGH);    // posar a 5V el pin 8
-  digitalWrite(led4, HIGH);    // posar a 5V el pin 9
-  digitalWrite(led5, HIGH);    // posar a 5V el pin 10
-  digitalWrite(led6, LOW);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
-  
- delay(velocitat);            // es queden leds velocitat ms en aquest estat
- 
-   digitalWrite(led0, LOW);    // posar a 5V el pin 5
-  digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, LOW);    // posar a 5V el pin 7
-  digitalWrite(led3, HIGH);    // posar a 5V el pin 8
-  digitalWrite(led4, HIGH);    // posar a 5V el pin 9
-  digitalWrite(led5, LOW);    // posar a 5V el pin 10
-  digitalWrite(led6, LOW);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
-  
- delay(velocitat);            // es queden leds velocitat ms en aquest estat
- 
-   digitalWrite(led0, LOW);    // posar a 5V el pin 5
-  digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, LOW);    // posar a 5V el pin 7
-  digitalWrite(led3, HIGH);    // posar a 5V el pin 8
-  digitalWrite(led4, HIGH);    // posar a 5V el pin 9
-  digitalWrite(led5, LOW);    // posar a 5V el pin 10
-  digitalWrite(led6, LOW);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
-  
- delay(velocitat);            // es queden leds velocitat ms en aquest estat
- 
-   digitalWrite(led0, LOW);    // posar a 5V el pin 5
-  digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, HIGH);    // posar a 5V el pin 7
-  digitalWrite(led3, HIGH);    // posar a 5V el pin 8
-  digitalWrite(led4, HIGH);    // posar a 5V el pin 9
-  digitalWrite(led5, HIGH);    // posar a 5V el pin 10
-  digitalWrite(led6, LOW);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
-  
-  delay(velocitat);            // es queden leds velocitat ms en aquest estat
-  
-   digitalWrite(led0, LOW);    // posar a 5V el pin 5
-  digitalWrite(led1, HIGH);    // posar a 5V el pin 6
-  digitalWrite(led2, HIGH);    // posar a 5V el pin 7
-  digitalWrite(led3, LOW);    // posar a 5V el pin 8
-  digitalWrite(led4, LOW);    // posar a 5V el pin 9
-  digitalWrite(led5, HIGH);    // posar a 5V el pin 10
-  digitalWrite(led6, HIGH);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
-
-   delay(velocitat);            // es queden leds velocitat ms en aquest estat
-  
-  digitalWrite(led0, HIGH);     // posar a 0V el pin 5
-  digitalWrite(led1, HIGH);     // posar a 0V el pin 6
-  digitalWrite(led2, LOW);     // posar a 0V el pin 7
-  digitalWrite(led3, LOW);     // posar a 0V el pin 8
-  digitalWrite(led4, LOW);     // posar a 0V el pin 9
-  digitalWrite(led5, LOW);     // posar a 0V el pin 10
-  digitalWrite(led6, HIGH);     // posar a 0V el pin 11
-  digitalWrite(led7, HIGH);     // posar a 0V el pin 12
-
-  delay(velocitat);            // es queden leds velocitat ms en aquest estat
-
-   digitalWrite(led0, HIGH);    // posar a 5V el pin 5
-  digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, LOW);    // posar a 5V el pin 7
-  digitalWrite(led3, LOW);    // posar a 5V el pin 8
-  digitalWrite(led4, LOW);    // posar a 5V el pin 9
-  digitalWrite(led5, LOW);    // posar a 5V el pin 10
-  digitalWrite(led6, LOW);    // posar a 5V el pin 11
-  digitalWrite(led7, HIGH);    // posar a 5V el pin 12
- delay(velocitat);            // es queden leds velocitat ms en aquest estat
-  
-   digitalWrite(led0, LOW);    // posar a 5V el pin 5
-  digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, LOW);    // posar a 5V el pin 7
-  digitalWrite(led3, LOW);    // posar a 5V el pin 8
-  digitalWrite(led4, LOW);    // posar a 5V el pin 9
-  digitalWrite(led5, LOW);    // posar a 5V el pin 10
-  digitalWrite(led6, LOW);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
-  
- delay(velocitat);            // es queden leds velocitat ms en aquest estat
-  
-   digitalWrite(led0, LOW);    // posar a 5V el pin 5
-  digitalWrite(led1, LOW);    // posar a 5V el pin 6
-  digitalWrite(led2, LOW);    // posar a 5V el pin 7
-  digitalWrite(led3, LOW);    // posar a 5V el pin 8
-  digitalWrite(led4, LOW);    // posar a 5V el pin 9
-  digitalWrite(led5, LOW);    // posar a 5V el pin 10
-  digitalWrite(led6, LOW);    // posar a 5V el pin 11
-  digitalWrite(led7, LOW);    // posar a 5V el pin 12
-  
-  delay(velocitat);            // es queden leds velocitat ms en aquest estat
-
-
-
-  
-  
+//***** Loop *****************************************************************
+void loop() {
+    for (int i = 0; i < length; i++) {
+    if (notes[i] == ' ') {
+      delay(beats[i] * tempo);
+    } else {
+      playNote(notes[i], beats[i] * tempo);
+    }
+    // pause between notes
+    delay(tempo / 2); 
+  }
 }
-//********** Funcions *************************************************************
+//****** Funcions *************************************************************
+void playTone(int tone, int duration) {
+  for (long i = 0; i < duration * 1000L; i += tone * 2) {
+    digitalWrite(speakerPin, HIGH);
+    delayMicroseconds(tone);
+    digitalWrite(speakerPin, LOW);
+    delayMicroseconds(tone);
+  }
+}
+
+void playNote(char note, int duration) {
+  char names[] = { 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'C' , 'D'};
+  int tones[] = { 1915, 1700, 1519, 1432, 1275, 1136, 1014, 956, 840};
+
+  // play the tone corresponding to the note name
+  for (int i = 0; i < 9; i++) {
+    if (names[i] == note) {
+      playTone(tones[i], duration);
+    }
+  }
+}
